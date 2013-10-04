@@ -1,18 +1,7 @@
-Welcome to your Appcelerator Titanium Mobile Project
+An example of convention over configuration for custom fonts in Titanium for iOS and Android.
 
-This is a blank project.  Start by editing your application's app.js to 
-make your first mobile project using Titanium.
+Just drop fonts in the 'fonts' directory, add the yy.tidynamicfont module, and require( 'ufonts' ).  It will load all fonts dynamically.
 
+Note: to make it really easy, rename the filename of the font to the PostScript name.  See http://apple.stackexchange.com/questions/79875/how-can-i-get-the-postscript-name-of-a-ttf-font-installed-in-os-x on how to find the PostScript name.
 
-
-----------------------------------
-Stuff our legal folk make us say:
-
-Appcelerator, Appcelerator Titanium and associated marks and logos are 
-trademarks of Appcelerator, Inc. 
-
-Titanium is Copyright (c) 2008-2013 by Appcelerator, Inc. All Rights Reserved.
-
-Titanium is licensed under the Apache Public License (Version 2). Please
-see the LICENSE file for the full license.
-
+The ufonts.fonts object will also contain map of all the custom loaded fonts. 
