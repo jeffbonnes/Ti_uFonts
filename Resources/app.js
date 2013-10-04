@@ -1,7 +1,8 @@
-// this sets the background color of the master UIView (when there are no windows/tab groups on it)
 Ti.UI.setBackgroundColor('#000');
 
-// Load the fonts
+// Just requiring ufonts will load all the fonts in the /fonts directory
+// Remember to rename your fonts  if necessary so the filename matches
+//  the PostScript name
 var ufonts = require('ufonts');
 
 var win = Ti.UI.createWindow({
@@ -16,23 +17,22 @@ var scrollView = Ti.UI.createScrollView({
 
 win.add(scrollView);
 
+// ufonts.fonts will contain all the names of the 
+// fonts loaded
 for (var fontName in ufonts.fonts) {
 	var label = Ti.UI.createLabel({
 		color : '#333',
 		text : fontName,
 		font : {
-			fontSize : 20,
+			fontSize : 24,
 			fontFamily : fontName
 		}
 	});
 	scrollView.add(label);
 }
 
-// create tab group
+// tabGroup to display
 var tabGroup = Ti.UI.createTabGroup();
-//
-//  add tabs
-//
 var tab1 = Ti.UI.createTab({
 	icon : 'KS_nav_ui.png',
 	title : 'uFonts',
